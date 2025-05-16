@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
-import '../../models/Item/Item Provider.dart';
-import '../../models/Item/Item.dart';
-import '../../models/cubit/Bloc.dart';
-import '../../models/cubit/states.dart';
 
-class Iconfavorite extends StatelessWidget {
+import '../../../models/Item/Item Provider.dart';
+import '../../../models/Item/Item.dart';
+import '../../../models/cubit/Bloc.dart';
+import '../../../models/cubit/states.dart';
+
+class IconfavoriteDelate extends StatelessWidget {
   final Category? category;
 
-  Iconfavorite({
+  IconfavoriteDelate({
     Key? key,
     this.category,
   }) : super(key: key);
@@ -24,7 +25,7 @@ class Iconfavorite extends StatelessWidget {
           onTap: () {
             if (category != null) {
               Provider.of<ItemProvider>(context, listen: false)
-                  .addToFavorites(category!);
+                  .removeFromFavorites(category!);
               cubit.updateFavoriteState(!isFavorite);
               print(isFavorite);
             }
@@ -32,7 +33,7 @@ class Iconfavorite extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Icon(
-              isFavorite ? Icons.favorite : Icons.favorite_border,
+              Icons.delete,
               size: 32,
               color: isFavorite ? Colors.red : Colors.grey,
             ),
@@ -42,4 +43,3 @@ class Iconfavorite extends StatelessWidget {
     );
   }
 }
-

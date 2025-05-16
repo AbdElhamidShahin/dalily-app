@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../models/Item.dart';
-import 'Wedget/IconFavorite.dart';
+import '../../../models/Item/Item Provider.dart';
+import '../../../models/Item/Item.dart';
+import '../IconFavorite.dart';
+import 'IconfavoriteDelate.dart';
 
 class FavoriteScreen extends StatelessWidget {
   @override

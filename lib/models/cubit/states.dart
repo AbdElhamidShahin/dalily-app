@@ -1,4 +1,4 @@
-import '../Item.dart';
+import '../Item/Item.dart';
 
 abstract class DalilyState {}
 
@@ -17,7 +17,7 @@ class UpdateFavoriteState extends DalilyState {
 }
 
 class DalilyLoadedState extends DalilyState {
-  final List<Map<String, String>> data; // البيانات التي يتم تحميلها
+  final List<Map<String, String>> data;
 
   DalilyLoadedState(this.data);
 }

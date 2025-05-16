@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_app/models/cubit/states.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import '../../viewmodels/ًWedget.dart';
-import '../../views/FavoriteScreen.dart';
+import '../../viewmodels/HomeScreenUi.dart';
+import '../../views/Wedget/favorite/FavoriteScreen.dart';
 
-import '../Item.dart';
+import '../Item/Item.dart';
 
 class DalilyCubit extends Cubit<DalilyState> {
   DalilyCubit() : super(DalilyInitialState());
@@ -15,7 +15,7 @@ class DalilyCubit extends Cubit<DalilyState> {
   int currentIndex = 0;
 
   List<Widget> screens = [
-    Wedget(),
+    HomeScreenUi(),
     FavoriteScreen(),
   ];
 
@@ -34,7 +34,6 @@ class DalilyCubit extends Cubit<DalilyState> {
       'urlImage': 'assets/Catogry1/9233795_4116139.jpg',
       'name': 'الصيداليات',
       'table': 'test'
-
     },
     {
       'urlImage': 'assets/Catogry1/rb_51672.png',
@@ -62,7 +61,8 @@ class DalilyCubit extends Cubit<DalilyState> {
       'table': 'test'
     },
     {
-      'urlImage': 'assets/Catogry1/flat-style-character-design_839035-1824362.jpg',
+      'urlImage':
+          'assets/Catogry1/flat-style-character-design_839035-1824362.jpg',
       'name': 'جلديه ',
       'table': 'test'
     },
@@ -107,12 +107,12 @@ class DalilyCubit extends Cubit<DalilyState> {
     {
       'urlImage':
           'assets/Catogry2/cartoon-color-supermarket-vegetables-and-fruits-vector-30335720.jpg',
-      'name': '  محلات الخضار والفاكه',
+      'name': '   الخضار والفاكه',
       'table': 'test'
     },
     {
       'urlImage': 'assets/Catogry2/images (1).jpeg',
-      'name': 'محلات الحلويات والمخابز',
+      'name': ' الحلويات والمخابز',
       'table': 'test'
     },
     {
@@ -133,8 +133,7 @@ class DalilyCubit extends Cubit<DalilyState> {
       'table': 'test'
     },
     {
-      'urlImage':
-          'assets/Catogry3/construction-worker-holding-drill-hammer-hand-professional-builder-with-work-tool-character-figure-cartoon-illustration-white-background_201904-310.avif',
+      'urlImage': 'assets/Catogry3/barbershop.png',
       'name': ' المؤن البويات',
       'table': 'test'
     },
@@ -145,7 +144,7 @@ class DalilyCubit extends Cubit<DalilyState> {
     },
   ];
 
-  Future<void> fetchCategoryData(String tableName, {String? uniqueId}) async {
+  Future<void> fetchCategoryData(String tableName) async {
     try {
       emit(CategoryLoadingState());
 
@@ -154,7 +153,7 @@ class DalilyCubit extends Cubit<DalilyState> {
           .select('id, name, price, image_url, number');
 
       if (response.isEmpty) {
-        emit(CategoryError('No data found for table "$tableName".'));
+        emit(CategoryError('No data found '));
         return;
       }
 

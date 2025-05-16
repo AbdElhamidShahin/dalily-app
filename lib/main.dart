@@ -7,7 +7,8 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter/services.dart';
 
 import 'core/constants/color.dart';
-import 'models/Item.dart';
+import 'models/Item/Item Provider.dart';
+import 'models/Item/Item.dart';
 import 'models/cubit/Bloc.dart';
 
 void main() async {
@@ -41,11 +42,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    // تخصيص شريط الحالة
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Colors.red, // تغيير لون شريط الحالة
-      statusBarIconBrightness: Brightness.light, // لون الأيقونات في الشريط
-    ));
+
   }
 
   @override

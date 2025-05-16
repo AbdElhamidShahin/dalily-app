@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../core/constants/color.dart';
 import '../../core/helpers/StarRating.dart';
-import '../../models/Item.dart';
+import '../../models/Item/Item.dart';
 import '../../models/cubit/Bloc.dart';
 import '../../models/cubit/states.dart';
 import '../Wedget/CarouseSlider.dart';

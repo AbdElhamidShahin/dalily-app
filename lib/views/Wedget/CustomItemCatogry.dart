@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/constants/color.dart';
 import '../../core/helpers/StarRating.dart';
-import '../../models/Item.dart';
+import '../../models/Item/Item.dart';
 
 import 'IconFavorite.dart';
 
